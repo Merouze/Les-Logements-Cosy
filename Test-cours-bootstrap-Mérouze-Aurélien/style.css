@@ -53,6 +53,51 @@ h1 {
     background-color: #E5D9CB;
 }
 
-.patchwork {
+/* .patchwork {
     height: 100vh;
+} */
+
+
+
+#carouselExampleIndicators {
+    width: 50%;
+    max-width: 600px;
+    height: auto;
+    margin: auto;
 }
+
+/* ***********************googlemap*************** */
+
+.map-container{
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+  }
+  .map-container iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

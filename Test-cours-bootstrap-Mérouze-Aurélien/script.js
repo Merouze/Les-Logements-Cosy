@@ -1,4 +1,7 @@
-window.onscroll = function() {scrollFunction()};
+
+// ************Navbar**************************
+
+window.onscroll = function () { scrollFunction() };
 
 function scrollFunction() {
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
@@ -7,5 +10,15 @@ function scrollFunction() {
     document.getElementById("navbar").style.top = "-100px";
   }
 }
-  
 
+// ************************Gallery*************************
+
+
+
+
+
+
+
+
+
+  

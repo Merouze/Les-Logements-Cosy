@@ -12,31 +12,7 @@
 <body>
     <!-- ********************** Navbar ********************** -->
     <header>
-        <!-- <nav class="navbar navbar-expand-lg navbar-light fw-bold">
-            <a class="navbar-brand" href="index.html">Les Logements Cosy</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="NosLogements.html">Nos logements</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="NosPrestations.html">Nos prestations</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="CaenlaMer.html">CaenlaMer</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="Contact.html">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </nav> -->
-
-
+    
         <nav id="navbar" class="navbar navbar-expand-lg navbar-light fw-bold">
             <a class="navbar-brand" href="#">Les Logements Cosy</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -82,7 +58,7 @@
 
         <!-- ***************** Patchwork **************** -->
 
-        <div class="container mt-5">
+        <!-- <div class="container mt-5">
             <div class="row">
                 <div class="offset-lg-1 col-lg-10">
                     <div class="row mb-lg-3">
@@ -104,7 +80,64 @@
                 </div>
             </div>
 
-        </div>
+        </div> -->
+        <section>
+            <div class="container mt-lg-5 mb-lg-5">
+                <div class="row">
+                    <div class="offset-lg-1 col-lg-10">
+
+                        <div id="carouselExampleIndicators" class="carousel slide w-100" data-bs-ride="true">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                                    class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                                    aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                                    aria-label="Slide 3"></button>
+                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+                                    aria-label="Slide 4"></button>
+                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4"
+                                    aria-label="Slide 5"></button>
+                            </div>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="Img-Patio-compréssée/salon-patio.jpg"
+                                        class="d-block w-100 landscape-image" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="Img-Patio-compréssée/chambre-patio.jpg" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="Img-Patio-compréssée/salon2-patio.jpg" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="Img-Patio-compréssée/cuisine-patio.jpg" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="Img-Patio-compréssée/Terasse retouchée, recadrée.jpg"
+                                        class="d-block w-100" alt="...">
+                                </div>
+
+                            </div>
+                            <button class="carousel-control-prev" type="button"
+                                data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button"
+                                data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+
+                    </div>
+
+        </section>
+
         <!-- ***************** Texte information logement **************** -->
 
         <div class="container mt-5">
@@ -147,6 +180,17 @@
                 </div>
             </div>
         </div>
+         <!--Google map-->
+         <div class="container mt-lg-5 mb-lg-5">
+            <h5 class="text-center mb-5">Situer le logement</h5>
+            <div class="row offset-lg-2 col-lg-8">
+                <div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 500px">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2608.278879364328!2d-0.33990792380149304!3d49.17629447828241!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x480a683b5959ac3f%3A0xd8e7a4459da6205!2sRue%20du%20Marais%2C%20Caen!5e0!3m2!1sfr!2sfr!4v1693771525840!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+                </div>
+            </div>
+        </div>
+
 
         <!-- ****************** Formulaire ******************** -->
         <form>
