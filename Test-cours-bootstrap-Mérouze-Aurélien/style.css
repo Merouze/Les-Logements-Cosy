@@ -1,12 +1,19 @@
-body a {
-color: b;
+main {
+    margin-left: 10%;
+    margin-right: 10%;
 }
+
+body a {
+    color: black;
+}
+
 header {
     margin-bottom: 100px;
+
 }
 
 .navbar {
-    background-color: #E5D9CB;
+    background-color: #BEB09A;
     position: fixed;
     top: 0px;
     width: 100%;
@@ -16,7 +23,7 @@ header {
 }
 
 .navbar a {
-    float: right;
+    /* float: right; */
     display: block;
     color: black;
     padding: 15px;
@@ -41,9 +48,11 @@ h1 {
     padding: 45px 0px 350px 0px;
     background-position: center;
 }
+
 .btn {
     background-color: #E5D9CB;
 }
+
 .btn:hover {
     background: #CEC3B6;
 
@@ -57,8 +66,6 @@ h1 {
     height: 100vh;
 } */
 
-
-
 #carouselExampleIndicators {
     width: 50%;
     max-width: 600px;
@@ -68,18 +75,61 @@ h1 {
 
 /* ***********************googlemap*************** */
 
-.map-container{
-    overflow:hidden;
-    padding-bottom:56.25%;
-    position:relative;
-    height:0;
+.map-container {
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+    height: 0;
+}
+
+.map-container iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+
+
+
+
+
+
+
+
+
+
+@keyframes tipsy {
+    0 {
+      transform: translateX(-50%) translateY(0%) rotate(0deg);
+    }
+    100% {
+      transform: translateX(-50%) translateY(0%) rotate(360deg);
+    }
   }
-  .map-container iframe{
-    left:0;
-    top:0;
-    height:100%;
-    width:100%;
-    position:absolute;
+  
+  h3:before,
+  h3:after {
+    content: '';
+    padding: .9em .4em;
+    position: relative;
+    left: 50%;
+    width: 30%;
+    display: block;
+    border: 15px solid #BEB09A;
+    transform: translateX(-50%) translateY(-50%) rotate(0deg);
+    animation: 20s infinite alternate ease-in-out tipsy;
+  }
+  
+  h3:before {
+    border-color: #BEB09A #BEB09A rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
+    z-index: -1;
+  }
+  
+  h3:after {
+    border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #BEB09A #BEB09A;
+    box-shadow: 25px 25px 25px rgba(46, 46, 49, .8);
   }
 
 
@@ -101,3 +151,4 @@ h1 {
 
 
 
+  

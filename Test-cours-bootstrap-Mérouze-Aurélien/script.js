@@ -16,9 +16,47 @@ function scrollFunction() {
 
 
 
+const paragraph = document.getElementById("tittle");
+
+const characters = paragraph.textContent.split("");
+
+paragraph.textContent = "";
+
+// Fonction pour afficher progressivement les caractères
+function animateText(index) {
+  if (index < characters.length) {
+    paragraph.textContent += characters[index];
+    setTimeout(function () {
+      animateText(index + 1);
+    }, 50);
+  }
+
+}
+
+animateText(0);
 
 
 
 
 
-  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
