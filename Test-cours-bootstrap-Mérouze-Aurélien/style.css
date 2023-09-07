@@ -50,7 +50,7 @@ h1 {
 }
 
 .btn {
-    background-color: #E5D9CB;
+    background-color: #BEB09A;
 }
 
 .btn:hover {
@@ -62,9 +62,9 @@ h1 {
     background-color: #E5D9CB;
 }
 
-/* .patchwork {
-    height: 100vh;
-} */
+.b-footer {
+    background-color: #BEB09A;
+}
 
 #carouselExampleIndicators {
     width: 50%;
