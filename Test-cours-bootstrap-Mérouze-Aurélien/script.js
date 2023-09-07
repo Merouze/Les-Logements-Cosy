@@ -16,7 +16,7 @@ function scrollFunction() {
 
 
 
-const paragraph = document.getElementById("tittle");
+const paragraph = document.querySelector("h1");
 
 const characters = paragraph.textContent.split("");
 
@@ -28,7 +28,7 @@ function animateText(index) {
     paragraph.textContent += characters[index];
     setTimeout(function () {
       animateText(index + 1);
-    }, 50);
+    }, 100);
   }
 
 }
