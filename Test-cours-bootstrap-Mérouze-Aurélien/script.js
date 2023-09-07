@@ -1,15 +1,26 @@
 
 // ************Navbar**************************
 
-window.onscroll = function () { scrollFunction() };
+// window.onscroll = function () { scrollFunction() };
 
-function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+// function scrollFunction() {
+//   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+//     document.getElementById("navbar").style.top = "0px";
+//   } else {
+//     document.getElementById("navbar").style.top = "-100px";
+//   }
+// }
+let prevScrollpos = window.scrollY;
+
+window.onscroll = function () {
+  let currentScrollPos = window.scrollY;
+  if (prevScrollpos > currentScrollPos) {
     document.getElementById("navbar").style.top = "0px";
   } else {
     document.getElementById("navbar").style.top = "-100px";
   }
-}
+  prevScrollpos = currentScrollPos;
+};
 
 // ************************Gallery*************************
 
