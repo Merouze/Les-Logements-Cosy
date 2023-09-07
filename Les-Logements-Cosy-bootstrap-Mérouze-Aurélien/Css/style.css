@@ -94,7 +94,21 @@ h1 {
 
 
 
-
+.snip1374 {
+    position: relative;
+    overflow: hidden;
+  }
+  .snip1374 img {
+    -webkit-transition: all 2s ease-out;
+    transition: all 2s ease-out;
+    -webkit-transform: scale(1.4);
+    transform: scale(1.4);
+  }
+  .snip1374:hover img,
+  .snip1374.hover img {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
 
 
 

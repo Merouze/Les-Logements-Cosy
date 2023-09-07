@@ -13,7 +13,7 @@ window.onscroll = function () {
   prevScrollpos = currentScrollPos;
 };
 
-// ************************Gallery*************************
+// ************************Animation titre*************************
 
 
 const paragraph = document.querySelector("h1");
@@ -36,27 +36,47 @@ function animateText(index) {
 animateText(0);
 
 
+// *****************************Form*********************
+
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.querySelector(".form");
+
+  form.addEventListener("submit", function (e) {
+      e.preventDefault(); // Empêche l'envoi par défaut du formulaire
+
+      // Récupérer les valeurs des champs en utilisant les classes
+      const name = document.querySelector(".name").value;
+      const email = document.querySelector(".email").value;
+      const phoneNumber = document.querySelector(".form-control[type='text']").value;
+      const message = document.querySelector(".message").value;
+
+      // Créer un objet contenant les données
+      const formData = {
+          name,
+          email,
+          phoneNumber,
+          message,
+      };
+
+      // Stocker les données dans le Local Storage
+      localStorage.setItem("formData", JSON.stringify(formData));
+
+      // Afficher un message de confirmation dans la console
+      console.log("Données stockées dans le Local Storage");
+
+      // Réinitialiser le formulaire après stockage des données
+      form.reset();
+  });
+});
 
 
 
 
+// image
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* Demo purposes only */
+$(".hover").mouseleave(
+  function () {
+    $(this).removeClass("hover");
+  }
+);

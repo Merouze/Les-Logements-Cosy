@@ -85,28 +85,35 @@
 
         </div>
         <!-- ****************** Formulaire ******************** -->
-        <form>
+        <form class="form">
             <div class="container">
+                <h4 class="mb-5">Contactez nous</h4>
                 <div class="row">
-                    <h4 class="mb-5">Contactez nous</h4>
+                    <div class="col-6">
+                        <div class="mb-3">
+                            <label for="inputName" class="form-label">Nom et Prénom</label>
+                            <input type="text" class="form-control name">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
                     <div class="col-6">
                         <div class="mb-3">
                             <label for="inputEmail" class="form-label">Adresse email</label>
-                            <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp">
+                            <input type="email" class="form-control email" aria-describedby="emailHelp">
                             <div id="emailHelp" class="form-text">Votre e-mail ne sera pas diffusé.</div>
                         </div>
                     </div>
                     <div class="col-6">
                         <div class="mb-3">
-                            <label for="name" class="form-label">Nom et Prénom</label>
-                            <input type="name" class="form-control" id="inputName">
+                            <label for="inputNumber" class="form-label">Numéro de téléphone</label>
+                            <input type="text" class="form-control">
                         </div>
                     </div>
                 </div>
                 <div class="mb-3">
                     <label for="commentaire">Ecrivez nous</label>
-                    <textarea class="form-control" placeholder="Laissez-nous votre message !" id="commentaire"
-                        style="height: 100px"></textarea>
+                    <textarea class="form-control message" placeholder="Laissez-nous votre message !" style="height: 100px"></textarea>
                 </div>
                 <div class="row">
                     <div class="col-6">
@@ -115,11 +122,9 @@
                             <label class="form-check-label" for="check">Valider le formulaire</label>
                         </div>
                     </div>
-
                 </div>
-
-
                 <button type="submit" class="btn mb-5">Envoyer</button>
+            </div>
         </form>
         <!-- ********************* footer *************************** -->
 
@@ -172,11 +177,9 @@
 
 
     </main>
-    <script src="Js/script.js"></script>
     <script src="Js/bootstrap.bundle.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="Js/script.js"></script>
 </body>
 
 </html>
