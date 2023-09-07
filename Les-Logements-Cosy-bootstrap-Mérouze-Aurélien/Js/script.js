@@ -68,15 +68,3 @@ document.addEventListener("DOMContentLoaded", function () {
       form.reset();
   });
 });
-
-
-
-
-// image
-
-/* Demo purposes only */
-$(".hover").mouseleave(
-  function () {
-    $(this).removeClass("hover");
-  }
-);
