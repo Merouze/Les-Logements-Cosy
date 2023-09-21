@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Récupérer les valeurs des champs en utilisant les classes
     const name = document.querySelector(".name").value;
     const email = document.querySelector(".email").value;
-    const phoneNumber = document.querySelector(".form-control[type='text']").value;
+    const phoneNumber = document.querySelector(".phone").value;
     const message = document.querySelector(".message").value;
     const dateIn = document.querySelector(".dateIn").value;
     const dateOut = document.querySelector(".dateOut").value;
