@@ -58,11 +58,95 @@
 
         <h2 class="text-center mb-5 mt-5">Un lieu unique pour un séjour unique</h2>
         <hr>
+        <!-- *******************************************Calendrier**************************** -->
 
+        <!-- <div class="container">
+            <div class="row">
+                <h4 class="mb-5 mt-5">Demande de réservation</h4>
+                <div id="cld" class="col-md-10 offset-md-1 mb-5">
+                    <div id="enteteCLD">
+                        <h4 id="cldT">Janvier</h4>
+                        <div id="avantEtApres">
+                            <button id="left" class="cldBtn">
+                                <img class="leftBtn" src="icon/FlècheGauche.png" alt="BoutonGaucheCld">
+                            </button>
+                            <button id="right" class="cldBtn">
+                                <img class="rightBtn" src="icon/FlècheDroite.png" alt="BoutonDroitCld">
+                            </button>
+                        </div>
+                    </div>
+                    <div id="cldBoite">
+                        <div id="jours">
+                            <div class="jour">Lun</div>
+                            <div class="jour">Mar</div>
+                            <div class="jour">Mer</div>
+                            <div class="jour">Jeu</div>
+                            <div class="jour">Ven</div>
+                            <div class="jour">Sam</div>
+                            <div class="jour">Dim</div>
+                        </div>
+                        <div id="semaine1" class="semaine">
+                            <div class="case"></div>
+                            <div class="case"></div>
+                            <div class="case"></div>
+                            <div class="case"></div>
+                            <div class="case"></div>
+                            <div class="case"></div>
+                            <div class="case"></div>
+                        </div>
+                        <div id="semaine2" class="semaine">
+                            <div class="case"></div>
+                            <div class="case"></div>
+                            <div class="case"></div>
+                            <div class="case"></div>
+                            <div class="case"></div>
+                            <div class="case"></div>
+                            <div class="case"></div>
+                        </div>
+                        <div id="semaine3" class="semaine">
+                            <div class="case"></div>
+                            <div class="case"></div>
+                            <div class="case"></div>
+                            <div class="case"></div>
+                            <div class="case"></div>
+                            <div class="case"></div>
+                            <div class="case"></div>
+                        </div>
+                        <div id="semaine4" class="semaine">
+                            <div class="case"></div>
+                            <div class="case"></div>
+                            <div class="case"></div>
+                            <div class="case"></div>
+                            <div class="case"></div>
+                            <div class="case"></div>
+                            <div class="case"></div>
+                        </div>
+                        <div id="semaine5" class="semaine">
+                            <div class="case"></div>
+                            <div class="case"></div>
+                            <div class="case"></div>
+                            <div class="case"></div>
+                            <div class="case"></div>
+                            <div class="case"></div>
+                            <div class="case"></div>
+                        </div>
+                        <div id="semaine6" class="semaine">
+                            <div class="case"></div>
+                            <div class="case"></div>
+                            <div class="case"></div>
+                            <div class="case"></div>
+                            <div class="case"></div>
+                            <div class="case"></div>
+                            <div class="case"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
         <!-- ****************** Formulaire ******************** -->
-        <form class="form">
+        <!-- <form class="form">
             <div class="container">
-                <h4 class="mb-5">Contactez nous</h4>
+                <h4 class="mb-5 mt-5">Formulaire de contact</h4>
                 <div class="row">
                     <div class="col-6">
                         <div class="mb-3">
@@ -86,9 +170,24 @@
                         </div>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="mb-3">
+                            <label for="startDate">Date de début :</label>
+                            <input type="text" class="form-control" id="startDate" name="startDate" readonly>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="mb-3">
+                            <label for="endDate">Date de fin :</label>
+                            <input type="text" class="form-control" id="endDate" name="endDate" readonly>
+                        </div>
+                    </div>
+                </div>
                 <div class="mb-3">
                     <label for="commentaire">Ecrivez nous</label>
-                    <textarea class="form-control message" placeholder="Laissez-nous votre message !" style="height: 100px"></textarea>
+                    <textarea class="form-control message" placeholder="Laissez-nous votre message !"
+                        style="height: 100px"></textarea>
                 </div>
                 <div class="row">
                     <div class="col-6">
@@ -100,7 +199,164 @@
                 </div>
                 <button type="submit" class="btn mb-5">Envoyer</button>
             </div>
-        </form>
+        </form> -->
+
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendrier et Formulaire</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <h4 class="mb-5 mt-5">Demande de réservation</h4>
+            <div id="cld" class="col-md-10 offset-md-1 mb-5">
+                <div id="enteteCLD">
+                    <h4 id="cldT">Janvier</h4>
+                    <div id="avantEtApres">
+                        <button id="left" class="cldBtn">
+                            <img class="leftBtn" src="icon/FlècheGauche.png" alt="BoutonGaucheCld">
+                        </button>
+                        <button id="right" class="cldBtn">
+                            <img class="rightBtn" src="icon/FlècheDroite.png" alt="BoutonDroitCld">
+                        </button>
+                    </div>
+                </div>
+                <div id="cldBoite">
+                    <div id="jours">
+                        <div class="jour">Lun</div>
+                        <div class="jour">Mar</div>
+                        <div class="jour">Mer</div>
+                        <div class="jour">Jeu</div>
+                        <div class="jour">Ven</div>
+                        <div class="jour">Sam</div>
+                        <div class="jour">Dim</div>
+                    </div>
+                    <div id="semaine1" class="semaine">
+                        <div class="case" data-date=""></div>
+                        <div class="case" data-date=""></div>
+                        <div class="case" data-date=""></div>
+                        <div class="case" data-date=""></div>
+                        <div class="case" data-date=""></div>
+                        <div class="case" data-date=""></div>
+                        <div class="case" data-date=""></div>
+                    </div>
+                    <div id="semaine2" class="semaine">
+                        <div class="case" data-date=""></div>
+                        <div class="case" data-date=""></div>
+                        <div class="case" data-date=""></div>
+                        <div class="case" data-date=""></div>
+                        <div class="case" data-date=""></div>
+                        <div class="case" data-date=""></div>
+                        <div class="case" data-date=""></div>
+                    </div>
+                    <div id="semaine3" class="semaine">
+                        <div class="case" data-date=""></div>
+                        <div class="case" data-date=""></div>
+                        <div class="case" data-date=""></div>
+                        <div class="case" data-date=""></div>
+                        <div class="case" data-date=""></div>
+                        <div class="case" data-date=""></div>
+                        <div class="case" data-date=""></div>
+                    </div>
+                    <div id="semaine4" class="semaine">
+                        <div class="case" data-date=""></div>
+                        <div class="case" data-date=""></div>
+                        <div class="case" data-date=""></div>
+                        <div class="case" data-date=""></div>
+                        <div class="case" data-date=""></div>
+                        <div class="case" data-date=""></div>
+                        <div class="case" data-date=""></div>
+                    </div>
+                    <div id="semaine5" class="semaine">
+                        <div class="case" data-date=""></div>
+                        <div class="case" data-date=""></div>
+                        <div class="case" data-date=""></div>
+                        <div class="case" data-date=""></div>
+                        <div class="case" data-date=""></div>
+                        <div class="case" data-date=""></div>
+                        <div class="case" data-date=""></div>
+                    </div>
+                    <div id="semaine6" class="semaine">
+                        <div class="case" data-date=""></div>
+                        <div class="case" data-date=""></div>
+                        <div class="case" data-date=""></div>
+                        <div class="case" data-date=""></div>
+                        <div class="case" data-date=""></div>
+                        <div class="case" data-date=""></div>
+                        <div class="case" data-date=""></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <form class="form">
+        <div class="container">
+            <h4 class="mb-5 mt-5">Formulaire de contact</h4>
+            <div class="row">
+                <div class="col-6">
+                    <div class="mb-3">
+                        <label for="inputName" class="form-label">Nom et Prénom</label>
+                        <input type="text" class="form-control name">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <div class="mb-3">
+                        <label for="startDate">Date d'arrivé souhaité :</label>
+                        <input type="text" class="form-control dateIn" id="startDate" name="startDate" readonly>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="mb-3">
+                        <label for="endDate">Date de départ souhaité :</label>
+                        <input type="text" class="form-control dateOut" id="endDate" name="endDate" readonly>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="mb-3">
+                        <label for="numberDate">Nombre de nuits :</label>
+                        <input type="text" class="form-control numberNight" id="numberNight" name="numberNight" readonly>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <div class="mb-3">
+                        <label for="inputEmail" class="form-label">Adresse email</label>
+                        <input type="email" class="form-control email" aria-describedby="emailHelp">
+                        <div id="emailHelp" class="form-text">Votre e-mail ne sera pas diffusé.</div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="mb-3">
+                        <label for="inputNumber" class="form-label">Numéro de téléphone</label>
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="commentaire">Ecrivez nous</label>
+                <textarea class="form-control message" placeholder="Laissez-nous votre message !"
+                    style="height: 100px"></textarea>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="check">
+                        <label class="form-check-label" for="check">Valider le formulaire</label>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn mb-5">Envoyer</button>
+        </div>
+    </form>
+
+
         <!-- ********************* footer *************************** -->
 
         <footer class="text-center text-lg-start bg-cosy text-muted">

@@ -51,9 +51,14 @@ document.addEventListener("DOMContentLoaded", function () {
     const email = document.querySelector(".email").value;
     const phoneNumber = document.querySelector(".form-control[type='text']").value;
     const message = document.querySelector(".message").value;
-
+    const dateIn = document.querySelector(".dateIn").value;
+    const dateOut = document.querySelector(".dateOut").value;
+    const numberNight = document.querySelector(".numberNight").value;
     // Créer un objet contenant les données
     const formData = {
+      dateIn,
+      dateOut,
+      numberNight,
       name,
       email,
       phoneNumber,
@@ -119,8 +124,6 @@ document.getElementById('right').onclick = function () {
   console.log(month);
 };
 
-
-
 getCalendrier(year, month);
 
 function getCalendrier(year, month) {
@@ -142,48 +145,106 @@ function getCalendrier(year, month) {
       cld[i + 1].month = "janvier"
       cld[i + 1].length = 31;
     }
-  
+    // Remplissage de toutes les cases du calendrier
+    for (let i = 0; i < cases.length; i++) {
+      cases[i].innerText = "";
+      const dayOfMonth = i - cld[cld.length - 1].dayStart + 1;
+      if (dayOfMonth > 0 && dayOfMonth <= cld[cld.length - 1].length) {
+        const currentDate = `${year}-${month.toString().padStart(2, '0')}-${dayOfMonth.toString().padStart(2, '0')}`;
+        cases[i].setAttribute('data-date', currentDate);
+        cases[i].innerText = dayOfMonth.toString();
+      }
+    }
 
-
-// Remplissage de toutes les cases du calendrier
-
-
-// for (let i = 0; i < cld[cld.length - 1].length + 1; i++) {
-//   if (i <= cld[cld.length - 1].length) {
-//     cases[(i + cld[cld.length - 1].dayStart) % 7].innerText = (i).toString();
-//   }
-// }
-// }
-
-// Remplissage de toutes les cases du calendrier
-// for (let i = 0; i < cases.length; i++) {
-//   cases[i].innerText = "";
-// }
-
-// const firstDayOfMonth = cld[cld.length - 1].dayStart; // Jour de la semaine (0-6) pour le premier jour du mois
-// const lastDayOfMonth = (firstDayOfMonth + cld[cld.length - 1].length - 1) % 7; // Jour de la semaine (0-6) pour le dernier jour du mois
-
-// for (let i = 1; i <= cld[cld.length - 1].length; i++) {
-//   const dayIndex = (i + firstDayOfMonth - 1) % 7; // Calcul de la position du jour dans la grille du calendrier
-//   cases[i - 1 + dayIndex].innerText = i.toString();
-// }
-
-// Remplissage de toutes les cases du calendrier
-for (let i = 0; i < cases.length; i++) {
-  cases[i].innerText = "";
-}
-
-for (let i = 1; i <= cld[cld.length - 1].length; i++) {
-  cases[i - 1 + cld[cld.length - 1].dayStart].innerText = i.toString();
+    function getFévrierLength(year) {
+      if (year % 4 === 0) return 29;
+      else return 28;
+    }
+    // Mise à jour de l'affichage du calendrier
+    document.getElementById('cldT').innerText = monthName[month - 1].toLocaleUpperCase() + " " + year;
+  }
 }
 
 
+// **************************Link calendar/form****************************
 
-function getFévrierLength(year) {
-  if (year % 4 === 0) return 29;
-  else return 28;
+const calendar = document.getElementById('cld');
+const startDateInput = document.getElementById('startDate');
+const endDateInput = document.getElementById('endDate');
+const numberNightInput = document.getElementById('numberNight');
+
+let startHighlightDate = null;
+let endHighlightDate = null;
+
+// Fonction pour mettre à jour les champs de date
+function updateDateFields(startDate, endDate) {
+  startDateInput.value = startDate;
+  endDateInput.value = endDate;
+  calculateNumberOfNights(startDate, endDate);
 }
-// Mise à jour de l'affichage du calendrier
-document.getElementById('cldT').innerText = monthName[month - 1].toLocaleUpperCase() + " " + year;
+
+// Fonction pour calculer le nombre de nuits
+function calculateNumberOfNights(startDate, endDate) {
+  const start = new Date(startDate);
+  const end = new Date(endDate);
+  const timeDifference = end.getTime() - start.getTime();
+  const numberOfNights = Math.ceil(timeDifference / (1000 * 3600 * 24));
+  numberNightInput.value = numberOfNights;
 }
+
+// Fonction pour réinitialiser la surbrillance des dates sélectionnées
+function resetDateHighlight() {
+  startHighlightDate = null;
+  endHighlightDate = null;
+  const allCases = document.getElementsByClassName('case');
+  for (let i = 0; i < allCases.length; i++) {
+    allCases[i].classList.remove('highlighted-range');
+  }
 }
+
+// Gestionnaire d'événement click sur le calendrier
+calendar.addEventListener('click', function (event) {
+  // Vérification si la cible du clic est une case du calendrier
+  if (event.target.classList.contains('case')) {
+    const selectedDate = event.target.getAttribute('data-date');
+    const currentStartDate = startDateInput.value;
+    const currentEndDate = endDateInput.value;
+
+    if (!currentStartDate || (currentStartDate && currentEndDate)) {
+      // Si aucune date de début n'est sélectionnée ou si les deux dates sont déjà sélectionnées, réinitialisez la surbrillance
+      resetDateHighlight();
+    }
+
+    if (!currentStartDate || (currentStartDate && currentEndDate)) {
+      startDateInput.value = selectedDate;
+      endDateInput.value = '';
+      startHighlightDate = new Date(selectedDate);
+      endHighlightDate = null;
+    } else if (!currentEndDate) {
+      endDateInput.value = selectedDate;
+      endHighlightDate = new Date(selectedDate);
+    }
+
+    // Mettez en surbrillance les cases entre la date de début et la date de fin
+    if (startHighlightDate && endHighlightDate) {
+      const dateArray = [];
+      let currentDate = new Date(startHighlightDate);
+      while (currentDate <= endHighlightDate) {
+        const formattedDate = currentDate.toISOString().slice(0, 10);
+        const caseElement = document.querySelector(`.case[data-date="${formattedDate}"]`);
+        if (caseElement) {
+          caseElement.classList.add('highlighted-range');
+        }
+        currentDate.setDate(currentDate.getDate() + 1);
+      }
+    }
+
+    // Calcul du nombre de nuits et mise à jour de l'input
+    calculateNumberOfNights(startDateInput.value, endDateInput.value);
+  }
+});
+
+// Réinitialisez la surbrillance lorsque l'utilisateur modifie une date manuellement
+startDateInput.addEventListener('input', resetDateHighlight);
+endDateInput.addEventListener('input', resetDateHighlight);
+
