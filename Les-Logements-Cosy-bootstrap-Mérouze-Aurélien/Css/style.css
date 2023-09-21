@@ -81,6 +81,14 @@ h1 {
   border: 1px solid #ddd;
   padding: 20px;
 }
+.rightBtn {
+  position: relative;
+  top: -20px;
+}
+.leftBtn {
+  position: relative;
+  top: -20px;
+}
 
 #cld {
   width: 60%;
@@ -135,13 +143,12 @@ h1 {
   width: 100%;
   height: 82%;
   background-color: rgb(143, 143, 143);
-  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
 }
-#jours {
+/* #jours {
   width: 100%;
   height: 10%;
   display: flex;
@@ -158,8 +165,17 @@ h1 {
   margin: 0;
   font-size: 18px;
 
+} */
+#jours {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr); /* Répartit les jours en 7 colonnes égales */
+  text-align: center;
 }
 
+.jour {
+  border: 1px solid #ccc; /* Ajoutez une bordure pour séparer visuellement les jours */
+  padding: 5px; /* Ajoutez un peu de marge intérieure pour espacer les jours */
+}
 .semaine {
   width: 100%;
   height: 15%;
@@ -179,6 +195,10 @@ h1 {
   color: white;
   margin: 0;
   font-size: 19px;
+}
+.case:hover {
+  background-color: rgb(75, 75, 75);
+
 }
 /* ***********************googlemap*************** */
 
