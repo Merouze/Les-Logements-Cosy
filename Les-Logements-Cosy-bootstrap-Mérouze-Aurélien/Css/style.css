@@ -73,6 +73,113 @@ h1 {
     margin: auto;
 }
 
+/* *******************Calendrier******************** */
+
+.calendar-container {
+  height: 50vh;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  padding: 20px;
+}
+
+#cld {
+  width: 60%;
+  height: 80%;
+  background-color: rgb(124, 124, 124);
+  box-shadow: 0 0 10 rgba(0, 0, 0, 0.3);
+}
+#enteteCLD {
+  width: 100%;
+  height: 18%;
+  background-color: rgb(124, 124, 124);
+  display: flex;
+  flex-direction: column;
+}
+
+#cldT {
+  width: 100%;
+  height: 66.66%;
+  color: white;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+#avantEtApres {
+  width: 100%;
+  height: 33.33%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(60, 60, 60);
+
+}
+
+.cldBtn {
+  width: 40%;
+  height: 100%;
+  border: none;
+  background-color: rgb(90, 90, 90);
+  color: white;
+  outline: none;
+  transition: 0.2s;
+}
+.cldBtn:hover {
+  background-color: rgb(75, 75, 75);
+
+}
+
+#cldBoite {
+  width: 100%;
+  height: 82%;
+  background-color: rgb(143, 143, 143);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+#jours {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.jour {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  margin: 0;
+  font-size: 18px;
+
+}
+
+.semaine {
+  width: 100%;
+  height: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.case {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.1s;
+  color: white;
+  margin: 0;
+  font-size: 19px;
+}
 /* ***********************googlemap*************** */
 
 .map-container {
