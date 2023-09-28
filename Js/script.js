@@ -18,7 +18,7 @@ window.onscroll = function () {
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.querySelector(".form");
 
-    form.addEventListener("submit", function (e) {
+  form.addEventListener("submit", function (e) {
     e.preventDefault(); // Empêche l'envoi par défaut du formulaire
 
     // Récupérer les valeurs des champs en utilisant les IDs
@@ -55,8 +55,6 @@ document.addEventListener("DOMContentLoaded", function () {
     form.reset();
   });
 });
-
-
 
 // *************************Calendar**************************
 
@@ -119,38 +117,55 @@ dateOut.addEventListener('change', function () {
 
 // ************************************* Json for valid date *****************************
 
+function isDateInvalid(selectedStartDate, selectedEndDate) {
+  // Charger le fichier JSON
+  fetch('dates_invalides.json')
+    .then(response => response.json())
+    .then(data => {
+      const invalidDates = data.dates;
+      let isInvalid = false;
 
-  // // Fonction pour vérifier si une date est invalide
-  // function isDateInvalid(selectedDate) {
-  //   // Charger le fichier JSON
-  //   fetch('dates_invalides.json')
-  //     .then(response => response.json())
-  //     .then(data => {
-  //       const invalidDates = data.dates;
-  //       if (invalidDates.includes(selectedDate)) {
-  //         // La date est invalide, affiche un message d'erreur
-  //         document.getElementById('noDispo').textContent = 'Cette date n\'est pas disponible.';
-  //       } else {
-  //         // La date est valide, efface le message d'erreur
-  //         document.getElementById('noDispo').textContent = '';
-  //       }
-  //     })
-  //     .catch(error => console.error('Erreur de chargement du fichier JSON :', error));
-  // }
+      // Convertir les dates en objets Date
+      const startDate = new Date(selectedStartDate);
+      const endDate = new Date(selectedEndDate);
 
-  // // Écouteurs d'événements pour les champs de date
-  // const dateInField = document.getElementById('dateIn');
-  // const dateOutField = document.getElementById('dateOut');
+      // Parcourir toutes les dates entre la date d'arrivée et la date de départ
+      let currentDate = new Date(startDate);
+      while (currentDate <= endDate) {
+        const formattedDate = currentDate.toISOString().split('T')[0]; // Format AAAA-MM-JJ
+        if (invalidDates.includes(formattedDate)) {
+          isInvalid = true;
+          break;
+        }
+        currentDate.setDate(currentDate.getDate() + 1); // Passer à la date suivante
+      }
 
-  // dateInField.addEventListener('change', function () {
-  //   const selectedDateIn = dateInField.value;
-  //   isDateInvalid(selectedDateIn);
-  // });
+      if (isInvalid) {
+        // Une date invalide est présente dans la période sélectionnée, affiche un message d'erreur
+        document.getElementById('dateInNoDispo').textContent = 'Le logement n\'est pas disponible pour cette période.';
+      } else {
+        // La période sélectionnée est valide, efface le message d'erreur
+        document.getElementById('dateInNoDispo').textContent = '';
+      }
+    })
+    .catch(error => console.error('Erreur de chargement du fichier JSON :', error));
+}
 
-  // dateOutField.addEventListener('change', function () {
-  //   const selectedDateOut = dateOutField.value;
-  //   isDateInvalid(selectedDateOut);
-  // });
+// Écouteurs d'événements pour les champs de date
+const dateInField = document.getElementById('dateIn');
+const dateOutField = document.getElementById('dateOut');
+
+dateInField.addEventListener('change', function () {
+  const selectedDateIn = dateInField.value;
+  const selectedDateOut = dateOutField.value;
+  isDateInvalid(selectedDateIn, selectedDateOut);
+});
+
+dateOutField.addEventListener('change', function () {
+  const selectedDateIn = dateInField.value;
+  const selectedDateOut = dateOutField.value;
+  isDateInvalid(selectedDateIn, selectedDateOut);
+});
 
 // ***********************************************************************Validation formulaire
 
@@ -166,10 +181,10 @@ form.addEventListener('submit', function (e) {
   const confirmationMessage = document.createElement('div');
   confirmationMessage.classList.add('alert', 'alert-success');
   confirmationMessage.textContent = 'Votre formulaire a été envoyé avec succès. Vous recevrez un e-mail de confirmation.';
-  
+
   // Effacez le contenu précédent de la div de validation
   validationDiv.innerHTML = '';
-  
+
   // Ajoutez le message à la div de validation
   validationDiv.appendChild(confirmationMessage);
 });
