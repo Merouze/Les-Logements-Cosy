@@ -1,87 +1,95 @@
 main {
-    margin-left: 10%;
-    margin-right: 10%;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
 body a {
-    color: black;
+  color: black;
 }
 
 header {
-    margin-bottom: 100px;
+  margin-bottom: 100px;
 
 }
 
 .navbar {
-    background-color: #BEB09A;
-    position: fixed;
-    top: 0px;
-    width: 100%;
-    transition: top 0.3s;
-    opacity: 0.9;
-    z-index: 1000;
+  background-color: #BEB09A;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  transition: top 0.3s;
+  opacity: 0.9;
+  box-shadow: 5px 5px 20px gray;
+  z-index: 1000;
 }
 
 .navbar a {
-    /* float: right; */
-    display: block;
-    color: black;
-    padding: 15px;
-    text-decoration: none;
+  /* float: right; */
+  display: block;
+  color: black;
+  padding: 15px;
+  text-decoration: none;
 
 }
 
 .navbar-expand-lg .navbar-collapse {
-    justify-content: flex-end;
-    margin-right: 15px;
+  justify-content: flex-end;
+  margin-right: 15px;
 }
 
 .navbar a:hover {
-    background-color: #EAE5E1;
-    color: black;
+  background-color: #EAE5E1;
+  color: black;
 }
 
 h1 {
-    background-image: url("img.css/étagère-zénithouse.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding: 45px 0px 350px 0px;
-    background-position: center;
+  background-image: url("img.css/étagère-zénithouse.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 45px 0px 350px 0px;
+  background-position: center;
+  box-shadow: 5px 5px 20px gray;
+
+}
+
+.shadow-box {
+  box-shadow: 5px 5px 20px gray;
 }
 
 .btn {
-    background-color: #BEB09A;
+  background-color: #BEB09A;
 }
 
 .btn:hover {
-    background: #CEC3B6;
+  background: #CEC3B6;
 
 }
 
 .bg-cosy {
-    background-color: #E5D9CB;
+  background-color: #E5D9CB;
 }
 
 .b-footer {
-    background-color: #BEB09A;
+  background-color: #BEB09A;
 }
 
 #carouselExampleIndicators {
-    width: 50%;
-    max-width: 600px;
-    height: auto;
-    margin: auto;
+  width: 50%;
+  max-width: 600px;
+  height: auto;
+  margin: auto;
 }
 
 /* *******************Calendrier******************** */
 
 .rightBtn {
   position: relative;
- 
+
 }
+
 .leftBtn {
   position: relative;
-  
+
 }
 
 #cld {
@@ -90,6 +98,7 @@ h1 {
   background-color: rgb(124, 124, 124);
   box-shadow: 0 0 10 rgba(0, 0, 0, 0.3);
 }
+
 #enteteCLD {
   width: 100%;
   height: 30%;
@@ -128,6 +137,7 @@ h1 {
   outline: none;
   transition: 0.2s;
 }
+
 .cldBtn:hover {
   background-color: rgb(75, 75, 75);
 
@@ -142,6 +152,7 @@ h1 {
   align-items: center;
 
 }
+
 #jours {
   width: 100%;
   height: 10%;
@@ -149,6 +160,7 @@ h1 {
   justify-content: center;
   align-items: center;
 }
+
 .jour {
   width: 100%;
   height: 100%;
@@ -160,6 +172,7 @@ h1 {
   font-size: 18px;
 
 }
+
 .semaine {
   width: 100%;
   height: 15%;
@@ -180,6 +193,7 @@ h1 {
   margin: 0;
   font-size: 19px;
 }
+
 .case:hover {
   background-color: rgb(75, 75, 75);
 
@@ -190,125 +204,74 @@ h1 {
   color: #000;
   font-weight: bold;
 }
+
 .highlighted-range {
   background-color: #ffeeba;
   color: #333;
   font-weight: bold;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* ***********************googlemap*************** */
 
 .map-container {
-    overflow: hidden;
-    padding-bottom: 56.25%;
-    position: relative;
-    height: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
 }
 
 .map-container iframe {
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.snip1374 {
+  position: relative;
+  overflow: hidden;
+}
+
+.snip1374 img {
+  -webkit-transition: all 2s ease-out;
+  transition: all 2s ease-out;
+  -webkit-transform: scale(1.4);
+  transform: scale(1.4);
+}
+
+.snip1374:hover img,
+.snip1374.hover img {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
+/* ******************************************animation titre************************************** */
+
+
+.slide-right {
+  -webkit-animation: slide-right 0.9s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: slide-right 0.9s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
 
-
-
-
-.snip1374 {
-    position: relative;
-    overflow: hidden;
+ @-webkit-keyframes slide-right {
+  0% {
+    -webkit-transform: translateX(-300px);
+            transform: translateX(-300px);
   }
-  .snip1374 img {
-    -webkit-transition: all 2s ease-out;
-    transition: all 2s ease-out;
-    -webkit-transform: scale(1.4);
-    transform: scale(1.4);
+  100% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
   }
-  .snip1374:hover img,
-  .snip1374.hover img {
-    -webkit-transform: scale(1);
-    transform: scale(1);
+}
+@keyframes slide-right {
+  0% {
+    -webkit-transform: translateX(-300px);
+            transform: translateX(-300px);
   }
-
-
-
-
-
-/* @keyframes tipsy {
-    0% {
-      transform: translateX(-50%) translateY(0%) rotate(0deg);
-    }
-    100% {
-      transform: translateX(-50%) translateY(0%) rotate(360deg);
-    }
+  100% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
   }
-  
-  h3:before,
-  h3:after {
-    content: '';
-    padding: .9em .4em;
-    position: relative;
-    left: 50%;
-    width: 30%;
-    display: block;
-    border: 15px solid #BEB09A;
-    transform: translateX(-50%) translateY(-50%) rotate(0deg);
-    animation: 20s infinite alternate ease-in-out tipsy;
-  }
-  
-  h3:before {
-    border-color: #BEB09A #BEB09A rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
-    z-index: -1;
-  }
-  
-  h3:after {
-    border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #BEB09A #BEB09A;
-    box-shadow: 25px 25px 25px rgba(46, 46, 49, .8);
-  } */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
+}

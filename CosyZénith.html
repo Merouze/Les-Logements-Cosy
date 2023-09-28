@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Css/bootstrap.css">
     <link rel="stylesheet" href="Css/style.css">
-    <title>Cosy Patio</title>
+    <title>Cosy Zénith</title>
 </head>
+
 
 <body>
     <header>
@@ -50,17 +51,18 @@
         </nav>
 
     </header>
-    <main>
 
-        <!-- *********************    Titre  ******************* -->
+    <!-- *********************    Titre  ******************* -->
+    <main class="content-main">
 
-        <h1 class="text-center">Cosy Patio</h1>
+        <h1 class="text-center"><p class="slide-right">Cosy Zénith</p></h1>
 
 
-        <h2 class="text-center mb-5 mt-5">Un lieu unique pour un séjour unique</h2>
+        <h2 id="sloggan" class="text-center mb-5 mt-5">Un lieu unique pour un séjour unique</h2>
         <hr>
 
-        <!-- ***************** Carousel **************** -->
+        <!-- ***************** Carrousel **************** -->
+
 
         <section>
             <div class="container mt-lg-5 mb-lg-5">
@@ -79,29 +81,29 @@
                                     aria-label="Slide 4"></button>
                                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4"
                                     aria-label="Slide 5"></button>
+                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5"
+                                    aria-label="Slide 6"></button>
                             </div>
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <img src="Img-Patio-compréssée/chambre-patio.jpg"
-                                        class="d-block w-100 landscape-image" alt="Chambre Cosy Patio">
+                                    <img src="Img-CosyZénith-compréssée/Pièce à vivre.jpg"
+                                        class="d-block w-100 landscape-image" alt="...">
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="Img-Patio-compréssée/salon-patio.jpg" class="d-block w-100"
-                                        alt="Salon Cosy Patio">
+                                    <img src="Img-CosyZénith-compréssée/Salon.jpg" class="d-block w-100" alt="...">
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="Img-Patio-compréssée/salon2-patio.jpg" class="d-block w-100"
-                                        alt="Salon Cosy Patio">
+                                    <img src="Img-CosyZénith-compréssée/Entrée.jpg" class="d-block w-100" alt="...">
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="Img-Patio-compréssée/cuisine-patio.jpg" class="d-block w-100"
-                                        alt="Cuisine Cosy Patio">
+                                    <img src="Img-CosyZénith-compréssée/Cuisine.jpg" class="d-block w-100" alt="...">
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="Img-Patio-compréssée/Terasse retouchée, recadrée.jpg"
-                                        class="d-block w-100" alt="Terasse Cosy Patio">
+                                    <img src="Img-CosyZénith-compréssée/Chambre.jpg" class="d-block w-100" alt="...">
                                 </div>
-
+                                <div class="carousel-item">
+                                    <img src="Img-CosyZénith-compréssée/Chambre 2.jpg" class="d-block w-100" alt="...">
+                                </div>
                             </div>
                             <button class="carousel-control-prev" type="button"
                                 data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -128,16 +130,12 @@
             <div class="row">
                 <h3 class="text-center mb-5">A propos de ce logement</h3>
                 <div class=" offset-1 col-10 ">
-                    <p class="text-center">Cette suite affiche un style résolument unique.
+                    <p class="text-center">Un air de campagne en pleine ville !
                         <br>
-                        Venez découvrir ce superbe logement à deux pas de la gare de Caen parfaitement aménagé pour
-                        profiter de vos séjours dans la cité de Guillaume Le Conquérant.
-                        <br>
-                        <br>
-                        Vous pourrez vous détendre en profitant de sa magnifique terrasse privative et gouter à un
-                        moment de relaxation bien mérité, le tout à proximité du port de plaisance, du centre ville et
-                        des rives de l'Orne.
-                    </p>
+                        A mi-chemin du Zénith, du stade Malherbe et du centre ville de Caen, vous bénéficierez d'un
+                        splendide appartement parfaitement rénové et exposé plein sud. Mais puisque rien n'est parfait
+                        sans un peu de verdure, le balcon filant vous permettra de prendre un petit déjeuner en plein
+                        air, au calme et sans aucun vis-à-vis.
 
                     <h4 class="mt-5">Préparer votre séjour</h4>
                     <br>
@@ -153,7 +151,7 @@
 
                     <p>Le linge de lit est fourni, ce qui n'est pas le cas pour les serviettes de toilette.
                         <br>
-                        Néanmoins si vous le souhaitez, des serviettes sont à disposition moyennant un supplément de 5
+                        Néanmoins si vous le souhaitez, des serviettes sont à disposition moyennant un supplément de 7
                         euros pour la durée du séjour.
                         <br>
                         Un des principes de la location courte durée est de procéder au nettoyage du bien à la fin du
@@ -165,13 +163,14 @@
                 </div>
             </div>
         </div>
+
         <!--Google map-->
         <div class="container mt-lg-5 mb-lg-5">
-            <h5 class="text-center mb-5">Situer le logement</h5>
+            <h5 class="text-center mt-5 mb-5">Situer le logement</h5>
             <div class="row offset-lg-2 col-lg-8">
                 <div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 500px">
                     <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2608.278879364328!2d-0.33990792380149304!3d49.17629447828241!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x480a683b5959ac3f%3A0xd8e7a4459da6205!2sRue%20du%20Marais%2C%20Caen!5e0!3m2!1sfr!2sfr!4v1693771525840!5m2!1sfr!2sfr"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2608.4984625266657!2d-0.3992451238017347!3d49.17212727857696!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x480a431b4cfd11f7%3A0xf19f692a744b255e!2sAv.%20Henry%20Ch%C3%A9ron%2C%2014000%20Caen!5e0!3m2!1sfr!2sfr!4v1693771041717!5m2!1sfr!2sfr"
                         width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade"></iframe>
 
@@ -180,41 +179,66 @@
         </div>
 
 
+
+
         <!-- ****************** Formulaire ******************** -->
         <form class="form">
             <div class="container">
-                <h4 class="mb-5">Contactez nous</h4>
+                <h4 class="mb-5">Demande de réservation</h4>
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-12 col-lg-4 mb-5">
+                        <label for="start">Date d'arrivée :</label>
+
+                        <input class="rounded-2 border-1 dateIn" type="date" id="dateIn" name="trip-start" value="2023-09-22" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-lg-4 mb-5">
+                        <label for="start">Date de départ :</label>
+
+                        <input class="rounded-2 border-1 dateOut" type="date" id="dateOut" name="trip-start" value="2023-09-22" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6 col-lg-3 mb-3">
+                        <label for="inputNumberNight" class="form-label">Nombre de nuits</label>
+                        <input type="text" class="border-dark form-control numberNight">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-lg-6">
                         <div class="mb-3">
                             <label for="inputName" class="form-label">Nom et Prénom</label>
-                            <input type="text" class="form-control name">
+                            <input type="text" class="border-dark form-control name">
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-12 col-lg-6">
                         <div class="mb-3">
                             <label for="inputEmail" class="form-label">Adresse email</label>
-                            <input type="email" class="form-control email" aria-describedby="emailHelp">
+                            <input type="email" class="border-dark form-control email" aria-describedby="emailHelp">
                             <div id="emailHelp" class="form-text">Votre e-mail ne sera pas diffusé.</div>
                         </div>
                     </div>
-                    <div class="col-6">
+                    <div class="col-12 col-lg-6">
                         <div class="mb-3">
                             <label for="inputNumber" class="form-label">Numéro de téléphone</label>
-                            <input type="text" class="form-control">
+                            <input type="text" class="phone border-dark form-control">
                         </div>
                     </div>
                 </div>
-                <div class="mb-3">
-                    <label for="commentaire">Ecrivez nous</label>
-                    <textarea class="form-control message" placeholder="Laissez-nous votre message !" style="height: 100px"></textarea>
+                <div class="row">
+                    <div class="col-12 mb-3">
+                        <label for="commentaire">Ecrivez nous</label>
+                        <textarea class="border-dark form-control message" placeholder="Laissez-nous votre message !"
+                            style="height: 100px"></textarea>
+                    </div>
                 </div>
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-12">
                         <div class="mb-3 form-check">
-                            <input type="checkbox" class="form-check-input" id="check">
+                            <input type="checkbox" class="border-dark form-check-input" id="check">
                             <label class="form-check-label" for="check">Valider le formulaire</label>
                         </div>
                     </div>
@@ -277,13 +301,10 @@
 
 
     </main>
+
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-
-
     <script src="Js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="Js/script.js"></script>
 </body>
 

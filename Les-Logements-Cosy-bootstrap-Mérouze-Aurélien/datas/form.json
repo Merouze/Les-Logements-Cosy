@@ -1,9 +1,0 @@
-{
-  "contacts": [
-    {
-      "nom": "Aurélien Mérouze",
-      "email": "aurelienmerouze@example.com",
-      "message": "Bonjour, ceci est un exemple de message."
-    }
-  ]
-}
