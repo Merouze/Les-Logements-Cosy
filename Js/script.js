@@ -18,19 +18,20 @@ window.onscroll = function () {
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.querySelector(".form");
 
-  form.addEventListener("submit", function (e) {
+    form.addEventListener("submit", function (e) {
     e.preventDefault(); // Empêche l'envoi par défaut du formulaire
 
-    // Récupérer les valeurs des champs en utilisant les classes
-    const name = document.querySelector(".name").value;
-    const email = document.querySelector(".email").value;
-    const phoneNumber = document.querySelector(".phone").value;
-    const message = document.querySelector(".message").value;
-    const dateIn = document.querySelector(".dateIn").value;
-    const dateOut = document.querySelector(".dateOut").value;
-    const numberNight = document.querySelector(".numberNight").value;
-    const checkData = document.querySelector(".form-check-input").value;
-    const housingChoice = document.querySelector(".housing-choice").value;
+    // Récupérer les valeurs des champs en utilisant les IDs
+    const name = document.querySelector("#inputName").value;
+    const email = document.querySelector("#inputEmail").value;
+    const phoneNumber = document.querySelector("#inputNumber").value;
+    const message = document.querySelector("#commentaire").value;
+    const dateIn = document.querySelector("#dateIn").value;
+    const dateOut = document.querySelector("#dateOut").value;
+    const numberNight = document.querySelector("#inputNumberNight").value;
+    const checkData = document.querySelector("#check").checked;
+    const housingChoice = document.querySelector("#input-choice").value;
+
     // Créer un objet contenant les données
     const formData = {
       dateIn,
@@ -51,39 +52,10 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("Données stockées dans le Local Storage");
 
     // Réinitialiser le formulaire après stockage des données
-
     form.reset();
   });
 });
-// ***********************************************************************Validation formulaire
-// Récupérez le formulaire par son ID
-const form = document.querySelector('.form');
 
-// Récupérez la div de validation par sa classe
-const validationDiv = document.querySelector('.validation-form');
-
-// Écoutez l'événement "submit" du formulaire
-form.addEventListener('submit', function (e) {
-  // Empêchez le comportement par défaut du formulaire (rechargement de la page)
-  e.preventDefault();
-
-  // Vous pouvez ajouter ici la logique d'envoi du formulaire (par exemple, à l'aide d'une requête AJAX)
-  // ...
-
-  // Affichez le message de confirmation dans la div de validation
-  const confirmationMessage = document.createElement('div');
-  confirmationMessage.classList.add('alert', 'alert-success');
-  confirmationMessage.textContent = 'Votre formulaire a été envoyé avec succès. Vous recevrez un e-mail de confirmation.';
-  
-  // Effacez le contenu précédent de la div de validation
-  validationDiv.innerHTML = '';
-  
-  // Ajoutez le message à la div de validation
-  validationDiv.appendChild(confirmationMessage);
-
-  // Réinitialisez le formulaire (facultatif)
-  form.reset();
-});
 
 
 // *************************Calendar**************************
@@ -142,4 +114,62 @@ dateOut.addEventListener('change', function () {
     // Affichage du nombre de nuits dans l'input correspondant
     numberNight.value = numberOfNights;
   }
+});
+
+
+// ************************************* Json for valid date *****************************
+
+
+  // // Fonction pour vérifier si une date est invalide
+  // function isDateInvalid(selectedDate) {
+  //   // Charger le fichier JSON
+  //   fetch('dates_invalides.json')
+  //     .then(response => response.json())
+  //     .then(data => {
+  //       const invalidDates = data.dates;
+  //       if (invalidDates.includes(selectedDate)) {
+  //         // La date est invalide, affiche un message d'erreur
+  //         document.getElementById('noDispo').textContent = 'Cette date n\'est pas disponible.';
+  //       } else {
+  //         // La date est valide, efface le message d'erreur
+  //         document.getElementById('noDispo').textContent = '';
+  //       }
+  //     })
+  //     .catch(error => console.error('Erreur de chargement du fichier JSON :', error));
+  // }
+
+  // // Écouteurs d'événements pour les champs de date
+  // const dateInField = document.getElementById('dateIn');
+  // const dateOutField = document.getElementById('dateOut');
+
+  // dateInField.addEventListener('change', function () {
+  //   const selectedDateIn = dateInField.value;
+  //   isDateInvalid(selectedDateIn);
+  // });
+
+  // dateOutField.addEventListener('change', function () {
+  //   const selectedDateOut = dateOutField.value;
+  //   isDateInvalid(selectedDateOut);
+  // });
+
+// ***********************************************************************Validation formulaire
+
+const form = document.querySelector('#form');
+const validationDiv = document.querySelector('#validation-form');
+
+// Écoutez l'événement "submit" du formulaire
+form.addEventListener('submit', function (e) {
+  // Empêchez le comportement par défaut du formulaire (rechargement de la page)
+  e.preventDefault();
+
+  // Affichez le message de confirmation dans la div de validation
+  const confirmationMessage = document.createElement('div');
+  confirmationMessage.classList.add('alert', 'alert-success');
+  confirmationMessage.textContent = 'Votre formulaire a été envoyé avec succès. Vous recevrez un e-mail de confirmation.';
+  
+  // Effacez le contenu précédent de la div de validation
+  validationDiv.innerHTML = '';
+  
+  // Ajoutez le message à la div de validation
+  validationDiv.appendChild(confirmationMessage);
 });

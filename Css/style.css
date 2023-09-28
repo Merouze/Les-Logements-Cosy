@@ -2,16 +2,13 @@ main {
   margin-left: 10%;
   margin-right: 10%;
 }
-
 body a {
   color: black;
 }
-
 header {
   margin-bottom: 100px;
 
 }
-
 .navbar {
   background-color: #BEB09A;
   position: fixed;
@@ -22,7 +19,6 @@ header {
   box-shadow: 5px 5px 20px gray;
   z-index: 1000;
 }
-
 .navbar a {
   /* float: right; */
   display: block;
@@ -31,17 +27,14 @@ header {
   text-decoration: none;
 
 }
-
 .navbar-expand-lg .navbar-collapse {
   justify-content: flex-end;
   margin-right: 15px;
 }
-
 .navbar a:hover {
   background-color: #EAE5E1;
   color: black;
 }
-
 h1 {
   background-image: url("img.css/étagère-zénithouse.jpg");
   background-repeat: no-repeat;
@@ -49,54 +42,35 @@ h1 {
   padding: 45px 0px 350px 0px;
   background-position: center;
   box-shadow: 5px 5px 20px gray;
-
 }
-
 .shadow-box {
   box-shadow: 5px 5px 20px gray;
 }
-
 .btn {
   background-color: #BEB09A;
 }
-
 .btn:hover {
   background: #CEC3B6;
-
 }
-
 .bg-cosy {
   background-color: #E5D9CB;
 }
-
 .b-footer {
   background-color: #BEB09A;
 }
-
 #carouselExampleIndicators {
   width: 50%;
   max-width: 600px;
   height: auto;
   margin: auto;
 }
-
-/* Ajoutez cette règle CSS pour changer la couleur de l'icône en noir */
-.carousel-control-next-icon {
-  color: black; /* ou toute autre couleur souhaitée */
-}
-
-
-
-
 /* ***********************googlemap*************** */
-
 .map-container {
   overflow: hidden;
   padding-bottom: 56.25%;
   position: relative;
   height: 0;
 }
-
 .map-container iframe {
   left: 0;
   top: 0;
@@ -104,35 +78,27 @@ h1 {
   width: 100%;
   position: absolute;
 }
-
 .snip1374 {
   position: relative;
   overflow: hidden;
 }
-
 .snip1374 img {
   -webkit-transition: all 2s ease-out;
   transition: all 2s ease-out;
   -webkit-transform: scale(1.4);
   transform: scale(1.4);
 }
-
 .snip1374:hover img,
 .snip1374.hover img {
   -webkit-transform: scale(1);
   transform: scale(1);
 }
-
 /* ******************************************animation titre************************************** */
-
-
 .slide-right {
   -webkit-animation: slide-right 0.9s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
   animation: slide-right 0.9s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
-
-
- @-webkit-keyframes slide-right {
+@-webkit-keyframes slide-right {
   0% {
     -webkit-transform: translateX(-300px);
             transform: translateX(-300px);
@@ -152,16 +118,12 @@ h1 {
             transform: translateX(0px);
   }
 }
-
 /* **********************************************h2 */
-
 .slide-left {
   -webkit-animation: slide-left 0.9s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
   animation: slide-left 0.9s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
-
-
- @-webkit-keyframes slide-left {
+@-webkit-keyframes slide-left {
   0% {
     -webkit-transform: translateX(300px);
             transform: translateX(300px);
@@ -181,3 +143,4 @@ h1 {
             transform: translateX(0px);
   }
 }
+

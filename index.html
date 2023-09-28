@@ -151,33 +151,35 @@
 
         <!-- ****************** Formulaire ******************** -->
 
-        <form class="form">
+        <form id="form" class="form">
             <div class="container col-10">
                 <h4 class="mb-5">Demande de réservation</h4>
                 <div class="row">
-                    <div class="col-12 col-lg-4 mb-5">
-                        <label for="start">Date d'arrivée : </label>
+                    <div class="col-12 col-lg-4 mb-3 mb-lg-5">
+                        <label for="dateIn">Date d'arrivée : </label>
                         <input class="rounded-2 border-1 dateIn" type="date" id="dateIn" name="trip-start" />
                         <div id="dateError" style="color: red;"></div>
+                        <div id="dateInNoDispo" style="color: red;"></div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-12 col-lg-4 mb-5">
-                        <label for="start">Date de départ : </label>
+                    <div class="col-12 col-lg-4 mb-3 mb-lg-5">
+                        <label for="dateOut">Date de départ : </label>
                         <input class="rounded-2 border-1 dateOut" type="date" id="dateOut" name="trip-start" />
                         <div id="dateOutError" style="color: red;"></div>
+                        <div id="dateOutNoDispo" style="color: red;"></div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-6 col-lg-4 mb-3">
                         <label for="inputNumberNight" class="form-label">Nombre de nuits</label>
-                        <input type="text" class="border-dark form-control numberNight">
+                        <input id="inputNumberNight" type="text" class="border-dark form-control numberNight">
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-12 col-lg-6 mb-3">
                         <label for="input-choice" class="form-label">Choix du logement</label>
-                        <select class="form-select border-black housing-choice " aria-label="Default select example">
+                        <select id="input-choice" class="form-select border-black housing-choice " aria-label="Default select example">
                             <option selected>Choisissez votre logement</option>
                             <option value="Cosy Patio">Cosy Patio</option>
                             <option value="Cosy Zénith">Cosy Zénith</option>
@@ -189,7 +191,7 @@
                     <div class="col-12 col-lg-6">
                         <div class="mb-3">
                             <label for="inputName" class="form-label">Nom et Prénom</label>
-                            <input type="text" class="border-dark form-control name">
+                            <input id="inputName" type="text" class="border-dark form-control name">
                         </div>
                     </div>
                 </div>
@@ -197,21 +199,21 @@
                     <div class="col-12 col-lg-6">
                         <div class="mb-3">
                             <label for="inputEmail" class="form-label">Adresse email</label>
-                            <input type="email" class="border-dark form-control email" aria-describedby="emailHelp">
+                            <input id="inputEmail" type="email" class="border-dark form-control email" aria-describedby="emailHelp">
                             <div id="emailHelp" class="form-text">Votre e-mail ne sera pas diffusé.</div>
                         </div>
                     </div>
                     <div class="col-12 col-lg-6">
                         <div class="mb-3">
                             <label for="inputNumber" class="form-label">Numéro de téléphone</label>
-                            <input type="text" class="phone border-dark form-control">
+                            <input id="inputNumber" type="text" class="phone border-dark form-control">
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-12 mb-3">
                         <label for="commentaire">Ecrivez nous</label>
-                        <textarea class="border-dark form-control message" placeholder="Laissez-nous votre message !"
+                        <textarea id="commentaire" class="border-dark form-control message" placeholder="Laissez-nous votre message !"
                             style="height: 100px"></textarea>
                     </div>
                 </div>
@@ -220,8 +222,9 @@
                         <div class="mb-3 form-check">
                             <input type="checkbox" class="border-dark form-check-input" id="check">
                             <label class="form-check-label figure-caption" for="check">J'accepte que mon adresse mail
-                                soit destinée à la société CosyCaen & Mer. Elle sera utilisée uniquement afin de vous
-                                envoyer des informations concernant nos services et notre actualité. Pour en savoir plus, consulter notre <a href="">Politique
+                 
+               soit destinée à la société CosyCaen & Mer. Elle sera utilisée uniquement afin de vous
+                                envoyer des informations concernant nos services et notre actualité. Pour en savoir plus, consulter notre <a href="#">Politique
                                     de confidentialité</a>.</label>
                         </div>
                     </div>
@@ -231,13 +234,11 @@
                         <button type="submit" class="btn mb-5">Envoyer</button>
                     </div>
                     <div class="offset-lg-1 col-lg-10">
-                        <div class="validation-form"></div>
+                        <div id="validation-form" class="validation-form"></div>
                     </div>
                 </div>
             </div>
         </form>
-
-
 
         <!-- ********************* footer *************************** -->
 
