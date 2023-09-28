@@ -30,6 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const dateOut = document.querySelector(".dateOut").value;
     const numberNight = document.querySelector(".numberNight").value;
     const checkData = document.querySelector(".form-check-input").value;
+    const housingChoice = document.querySelector(".housing-choice").value;
     // Créer un objet contenant les données
     const formData = {
       dateIn,
@@ -40,6 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
       phoneNumber,
       message,
       checkData,
+      housingChoice,
     };
 
     // Stocker les données dans le Local Storage
@@ -53,6 +55,36 @@ document.addEventListener("DOMContentLoaded", function () {
     form.reset();
   });
 });
+// ***********************************************************************Validation formulaire
+// Récupérez le formulaire par son ID
+const form = document.querySelector('.form');
+
+// Récupérez la div de validation par sa classe
+const validationDiv = document.querySelector('.validation-form');
+
+// Écoutez l'événement "submit" du formulaire
+form.addEventListener('submit', function (e) {
+  // Empêchez le comportement par défaut du formulaire (rechargement de la page)
+  e.preventDefault();
+
+  // Vous pouvez ajouter ici la logique d'envoi du formulaire (par exemple, à l'aide d'une requête AJAX)
+  // ...
+
+  // Affichez le message de confirmation dans la div de validation
+  const confirmationMessage = document.createElement('div');
+  confirmationMessage.classList.add('alert', 'alert-success');
+  confirmationMessage.textContent = 'Votre formulaire a été envoyé avec succès. Vous recevrez un e-mail de confirmation.';
+  
+  // Effacez le contenu précédent de la div de validation
+  validationDiv.innerHTML = '';
+  
+  // Ajoutez le message à la div de validation
+  validationDiv.appendChild(confirmationMessage);
+
+  // Réinitialisez le formulaire (facultatif)
+  form.reset();
+});
+
 
 // *************************Calendar**************************
 

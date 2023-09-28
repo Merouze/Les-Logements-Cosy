@@ -57,7 +57,7 @@
         <h1 class="text-center"><p class="slide-right">Caen la Mer</p></h1>
 
 
-        <h2 class="text-center mb-5 mt-5">Un lieu unique pour un séjour unique</h2>
+        <h2 class="text-center mb-5 mt-5 slide-left">Un lieu unique pour un séjour unique</h2>
         <hr>
 
         <!-- ***************** Patchwork **************** -->
@@ -138,26 +138,37 @@
 
             <!-- ****************** Formulaire ******************** -->
             <form class="form">
-                <div class="container">
+                <div class="container col-10">
                     <h4 class="mb-5">Demande de réservation</h4>
                     <div class="row">
                         <div class="col-12 col-lg-4 mb-5">
-                            <label for="start">Date d'arrivée :</label>
-    
-                            <input class="rounded-2 border-1 dateIn" type="date" id="dateIn" name="trip-start" value="2023-09-22" />
+                            <label for="start">Date d'arrivée : </label>
+                            <input class="rounded-2 border-1 dateIn" type="date" id="dateIn" name="trip-start" />
+                            <div id="dateError" style="color: red;"></div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-12 col-lg-4 mb-5">
-                            <label for="start">Date de départ :</label>
-    
-                            <input class="rounded-2 border-1 dateOut" type="date" id="dateOut" name="trip-start" value="2023-09-22" />
+                            <label for="start">Date de départ : </label>
+                            <input class="rounded-2 border-1 dateOut" type="date" id="dateOut" name="trip-start" />
+                            <div id="dateOutError" style="color: red;"></div>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-6 col-lg-3 mb-3">
+                        <div class="col-6 col-lg-4 mb-3">
                             <label for="inputNumberNight" class="form-label">Nombre de nuits</label>
                             <input type="text" class="border-dark form-control numberNight">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-lg-6 mb-3">
+                            <label for="input-choice" class="form-label">Choix du logement</label>
+                            <select class="form-select border-black housing-choice " aria-label="Default select example">
+                                <option selected>Choisissez votre logement</option>
+                                <option value="Cosy Patio">Cosy Patio</option>
+                                <option value="Cosy Zénith">Cosy Zénith</option>
+                                <option value="Zénit'House">Zénit'House</option>
+                            </select>
                         </div>
                     </div>
                     <div class="row">
@@ -194,11 +205,21 @@
                         <div class="col-12">
                             <div class="mb-3 form-check">
                                 <input type="checkbox" class="border-dark form-check-input" id="check">
-                                <label class="form-check-label" for="check">Valider le formulaire</label>
+                                <label class="form-check-label figure-caption" for="check">J'accepte que mon adresse mail
+                                    soit destinée à la société CosyCaen & Mer. Elle sera utilisée uniquement afin de vous
+                                    envoyer des informations concernant nos services et notre actualité. Pour en savoir plus, consulter notre <a href="">Politique
+                                        de confidentialité</a>.</label>
                             </div>
                         </div>
                     </div>
-                    <button type="submit" class="btn mb-5">Envoyer</button>
+                    <div class="row">
+                        <div class="col-1">
+                            <button type="submit" class="btn mb-5">Envoyer</button>
+                        </div>
+                        <div class="offset-lg-1 col-lg-10">
+                            <div class="validation-form"></div>
+                        </div>
+                    </div>
                 </div>
             </form>
             <!-- ********************* footer *************************** -->
