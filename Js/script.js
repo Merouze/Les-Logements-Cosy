@@ -204,113 +204,120 @@ choiceField.addEventListener('change', handleDateChange);
 // *********************************calendar **************************************
 
 
-let cases = document.getElementsByClassName('case');
+// let cases = document.getElementsByClassName('case');
 
-let date = new Date();
-let year = date.getFullYear();
-let month = date.getMonth() + 1;
-let day = date.getDate();
+// let date = new Date();
+// let year = date.getFullYear();
+// let month = date.getMonth() + 1;
+// let day = date.getDate();
 
-const monthName = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"];
+// const monthName = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"];
 
-const UP_MONTH = 'upMonth';
-const DOWN_MONTH = 'downMonth';
+// const UP_MONTH = 'upMonth';
+// const DOWN_MONTH = 'downMonth';
 
-function CALENDRIER_REDUCER(action) {
-  switch (action) {
-    case UP_MONTH:
-      if (month < 12) month++;
-      else {
-        year++;
-        month = 1;
-      }
-      break;
-    case DOWN_MONTH:
-      if (month > 1) month--;
-      else {
-        year--;
-        month = 12;
-      }
-      break;
-    default:
-      break;
-  }
-  getCalendrier(year, month);
-}
+// function CALENDRIER_REDUCER(action) {
+//   switch (action) {
+//     case UP_MONTH:
+//       if (month < 12) month++;
+//       else {
+//         year++;
+//         month = 1;
+//       }
+//       break;
+//     case DOWN_MONTH:
+//       if (month > 1) month--;
+//       else {
+//         year--;
+//         month = 12;
+//       }
+//       break;
+//     default:
+//       break;
+//   }
+//   getCalendrier(year, month);
+// }
 
-document.getElementById('left').onclick = function () {
-  CALENDRIER_REDUCER(DOWN_MONTH);
-  console.log(month);
-};
+// document.getElementById('left').onclick = function () {
+//   CALENDRIER_REDUCER(DOWN_MONTH);
+//   console.log(month);
+// };
 
-document.getElementById('right').onclick = function () {
-  CALENDRIER_REDUCER(UP_MONTH);
-  console.log(month);
-};
+// document.getElementById('right').onclick = function () {
+//   CALENDRIER_REDUCER(UP_MONTH);
+//   console.log(month);
+// };
 
-getCalendrier(year, month);
+// getCalendrier(year, month);
 
-function getCalendrier(year, month) {
-  const monthNb = month + 12 * (year - 2020);
-  let cld = [{ dayStart: 2, length: 31, year: 2020, month: "janvier" }];
+// function getCalendrier(year, month) {
+//   const monthNb = month + 12 * (year - 2020);
+//   let cld = [{ dayStart: 2, length: 31, year: 2020, month: "janvier" }];
 
-  for (let i = 0; i < monthNb - 1; i++) {
-    let yearSimule = 2020 + Math.floor(i / 12);
-    const monthsSimuleLongueur = [31, getFévrierLength(yearSimule), 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-    let monthsSimuleIndex = (i + 1) - (yearSimule - 2020) * 12;
+//   for (let i = 0; i < monthNb - 1; i++) {
+//     let yearSimule = 2020 + Math.floor(i / 12);
+//     const monthsSimuleLongueur = [31, getFévrierLength(yearSimule), 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+//     let monthsSimuleIndex = (i + 1) - (yearSimule - 2020) * 12;
 
-    cld[i + 1] = {
-      dayStart: (cld[i].dayStart + monthsSimuleLongueur[monthsSimuleIndex - 1]) % 7,
-      length: monthsSimuleLongueur[monthsSimuleIndex],
-      year: 2020 + Math.floor((i + 1) / 12),
-      month: monthName[monthsSimuleIndex]
-    }
-    if (cld[i + 1].month === undefined) {
-      cld[i + 1].month = "janvier";
-      cld[i + 1].length = 31;
-    }
-  }
+//     cld[i + 1] = {
+//       dayStart: (cld[i].dayStart + monthsSimuleLongueur[monthsSimuleIndex - 1]) % 7,
+//       length: monthsSimuleLongueur[monthsSimuleIndex],
+//       year: 2020 + Math.floor((i + 1) / 12),
+//       month: monthName[monthsSimuleIndex]
+//     }
+//     if (cld[i + 1].month === undefined) {
+//       cld[i + 1].month = "janvier";
+//       cld[i + 1].length = 31;
+//     }
+//   }
 
-  for (let i = 0; i < cases.length; i++) {
-    cases[i].innerText = "";
-    const dayOfMonth = i - cld[cld.length - 1].dayStart + 1;
-    if (dayOfMonth > 0 && dayOfMonth <= cld[cld.length - 1].length) {
-      const currentDate = `${year}-${month.toString().padStart(2, '0')}-${dayOfMonth.toString().padStart(2, '0')}`;
-      cases[i].setAttribute('data-date', currentDate);
-      cases[i].innerText = dayOfMonth.toString();
-    }
-  }
+//   for (let i = 0; i < cases.length; i++) {
+//     cases[i].innerText = "";
+//     const dayOfMonth = i - cld[cld.length - 1].dayStart + 1;
+//     if (dayOfMonth > 0 && dayOfMonth <= cld[cld.length - 1].length) {
+//       const currentDate = `${year}-${month.toString().padStart(2, '0')}-${dayOfMonth.toString().padStart(2, '0')}`;
+//       cases[i].setAttribute('data-date', currentDate);
+//       cases[i].innerText = dayOfMonth.toString();
+//     }
+//   }
 
-  document.getElementById('cldT').innerText = monthName[month - 1].toLocaleUpperCase() + " " + year;
-}
+//   document.getElementById('cldT').innerText = monthName[month - 1].toLocaleUpperCase() + " " + year;
+// }
 
-function getFévrierLength(year) {
-  if (year % 4 === 0) return 29;
-  else return 28;
-}
+// function getFévrierLength(year) {
+//   if (year % 4 === 0) return 29;
+//   else return 28;
+// }
 
 
 
 // ***********************************************************************Validation formulaire
 
-const form = document.querySelector('#form');
-const validationDiv = document.querySelector('#validation-form');
 
-// Écoutez l'événement "submit" du formulaire
-form.addEventListener('submit', function (e) {
-  // Empêchez le comportement par défaut du formulaire (rechargement de la page)
-  e.preventDefault();
+// Sélectionnez tous les éléments avec la classe "form" et "validation-form"
+const forms = document.querySelectorAll('.form');
+const validationDivs = document.querySelectorAll('.validation-form');
 
-  // Affichez le message de confirmation dans la div de validation
-  const confirmationMessage = document.createElement('div');
-  confirmationMessage.classList.add('alert', 'alert-success');
-  confirmationMessage.textContent = 'Votre formulaire a été envoyé avec succès. Vous recevrez un e-mail de confirmation.';
+// Parcourez tous les formulaires
+forms.forEach(function (form, index) {
+  // Écoutez l'événement "submit" de chaque formulaire
+  form.addEventListener('submit', function (e) {
+    // Empêchez le comportement par défaut du formulaire (rechargement de la page)
+    e.preventDefault();
 
-  // Effacez le contenu précédent de la div de validation
-  validationDiv.innerHTML = '';
+    // Affichez le message de confirmation dans la div de validation correspondante
+    const validationDiv = validationDivs[index];
+    const confirmationMessage = document.createElement('div');
+    confirmationMessage.classList.add('alert', 'alert-success');
+    confirmationMessage.textContent = 'Votre formulaire a été envoyé avec succès. Vous recevrez un e-mail de confirmation.';
 
-  // Ajoutez le message à la div de validation
-  validationDiv.appendChild(confirmationMessage);
+    // Effacez le contenu précédent de la div de validation
+    validationDiv.innerHTML = '';
+
+    // Ajoutez le message à la div de validation
+    validationDiv.appendChild(confirmationMessage);
+  });
 });
+
 
 // ****************************translate*********
