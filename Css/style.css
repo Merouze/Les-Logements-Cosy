@@ -93,6 +93,185 @@ h1 {
   -webkit-transform: scale(1);
   transform: scale(1);
 }
+/***********************************************calendrier*************************************************/
+/* .calendar {
+  font-family: Arial, sans-serif;
+  max-width: 400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+}
+
+.month {
+  grid-column: 1 / span 7;
+  text-align: center;
+  background-color: #BEB09A;
+  color: white;
+  padding: 10px;
+  position: relative;
+}
+
+.prev-month,
+.next-month {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.prev-month {
+  left: 10px;
+}
+
+.next-month {
+  right: 10px;
+}
+
+.day {
+  text-align: center;
+  padding: 5px;
+  border: 1px solid #ddd;
+}
+
+
+/* Style pour les jours de disponibilité spécifiques à un logement */
+/* .available-cosy-patio {
+  border-bottom: 5px solid red;
+}
+
+.available-cosy-zenith {
+  border-bottom: 5px solid green; 
+}
+
+.available-zenit-house {
+  border-bottom: 5px solid yellow; 
+} */
+
+.rightBtn {
+  position: relative;
+
+ 
+}
+.leftBtn {
+  position: relative;
+} 
+
+#cld {
+
+  height: 50vh;
+  background-color: #BEB09A;
+  box-shadow: 0 0 10 rgba(0, 0, 0, 0.3);
+}
+#enteteCLD {
+  width: 100%;
+  height: 30%;
+  background-color: #BEB09A;
+  display: flex;
+  flex-direction: column;
+}
+
+#cldT {
+  width: 100%;
+  height: 66.66%;
+  color: white;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+#avantEtApres {
+  width: 100%;
+  height: 33.33%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #BEB09A;
+
+}
+
+.cldBtn {
+  width: 40%;
+  height: 100%;
+  border: none;
+  background-color: #BEB09A ;
+  color: white;
+  outline: none;
+  transition: 0.2s;
+  font-size: 1.5rem;
+}
+.cldBtn:hover {
+  background-color: #ffeeba;
+
+}
+
+#cldBoite {
+  width: 100%;
+  height: 82%;
+  background-color:#ECE8E4;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+#jours {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.jour {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  margin: 0;
+  font-size: 18px;
+
+}
+.semaine {
+  width: 100%;
+  height: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.case {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.1s;
+  color: black;
+  margin: 0;
+  font-size: 19px;
+}
+.case:hover {
+  background-color: #C0B49F;
+
+}
+
+.selected {
+  background-color: #FFFF00;
+  color: #000;
+  font-weight: bold;
+}
+.highlighted-range {
+  background-color: #ffeeba;
+  color: #333;
+  font-weight: bold;
+}
+
+
 /* ******************************************animation titre************************************** */
 .slide-right {
   -webkit-animation: slide-right 0.9s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;

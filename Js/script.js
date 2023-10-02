@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// *************************Calendar**************************
+// *************************Input Navigateur date**************************
 
 const dateIn = document.getElementById('dateIn');
 const dateOut = document.getElementById('dateOut');
@@ -113,78 +113,6 @@ dateOut.addEventListener('change', function () {
 
 // ************************************* Json for valid date *****************************
 
-// // Fonction pour charger le fichier JSON des dates invalides
-// async function loadInvalidDates() {
-//   try {
-//     // Charge le fichier JSON et attend la réponse
-//     const response = await fetch('dates_invalides.json');
-//     // Analyse la réponse en JSON et récupère les dates invalides
-//     const data = await response.json();
-//     return data.dates;
-//   } catch (error) {
-//     console.error('Erreur de chargement du fichier JSON :', error);
-//     return [];
-//   }
-// }
-
-// // Fonction pour vérifier si les dates sont invalides
-// function isDateInvalid(selectedStartDate, selectedEndDate, invalidDates) {
-//   let isInvalid = false;
-//   const startDate = new Date(selectedStartDate);
-//   const endDate = new Date(selectedEndDate);
-
-//   let currentDate = new Date(startDate);
-//   while (currentDate <= endDate) {
-//     const formattedDate = currentDate.toISOString().split('T')[0];
-//     if (invalidDates.includes(formattedDate)) {
-//       isInvalid = true;
-//       break;
-//     }
-//     currentDate.setDate(currentDate.getDate() + 1);
-//   }
-
-//   return isInvalid;
-// }
-
-// // Fonction pour mettre à jour le message d'erreur
-// function updateErrorMessage(isInvalid) {
-//   const errorMessage = document.getElementById('dateInNoDispo');
-//   if (isInvalid) {
-//     errorMessage.textContent = 'Le logement n\'est pas disponible pour cette période.';
-//   } else {
-//     errorMessage.textContent = '';
-//   }
-// }
-
-// // Écouteurs d'événements pour les champs de date et de choix du logement
-// const dateInField = document.getElementById('dateIn');
-// const dateOutField = document.getElementById('dateOut');
-// const choiceField = document.getElementById('input-choice');
-
-// async function handleDateChange() {
-//   const selectedDateIn = dateInField.value;
-//   const selectedDateOut = dateOutField.value;
-//   const selectedChoice = choiceField.value;
-
-//   if (selectedChoice === 'Cosy Patio') {
-//     // Charge les dates invalides
-//     const invalidDates = await loadInvalidDates();
-//     // Vérifie si les dates sont invalides
-//     const isInvalid = isDateInvalid(selectedDateIn, selectedDateOut, invalidDates);
-//     // Met à jour le message d'erreur en fonction du résultat
-//     updateErrorMessage(isInvalid);
-//   } else {
-//     // Réinitialise le message d'erreur si l'option change
-//     updateErrorMessage(false);
-//   }
-// }
-
-// // Ajoute des écouteurs d'événements pour les champs de date et de choix du logement
-// dateInField.addEventListener('change', handleDateChange);
-// dateOutField.addEventListener('change', handleDateChange);
-// choiceField.addEventListener('change', handleDateChange);
-
-// ********************
 // Fonction pour charger le fichier JSON des dates invalides
 async function loadInvalidDates(fileName) {
   try {
@@ -273,6 +201,159 @@ dateInField.addEventListener('change', handleDateChange);
 dateOutField.addEventListener('change', handleDateChange);
 choiceField.addEventListener('change', handleDateChange);
 
+// *********************************calendar **************************************
+// let currentYear = 2023;
+//         let currentMonth = 9; // Octobre (JavaScript compte les mois de 0 à 11)
+
+//         function generateCalendar() {
+//             const calendar = document.querySelector(".calendar");
+//             calendar.innerHTML = "";
+
+//             const months = [
+//                 "Janvier", "Février", "Mars", "Avril", "Mai", "Juin",
+//                 "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"
+//             ];
+
+//             const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+
+//             const monthElement = document.createElement("div");
+//             monthElement.classList.add("month");
+//             monthElement.innerHTML = `
+//                 <span class="prev-month" onclick="previousMonth()">&#8249;</span>
+//                 ${months[currentMonth]} ${currentYear}
+//                 <span class="next-month" onclick="nextMonth()">&#8250;</span>
+//             `;
+
+//             calendar.appendChild(monthElement);
+
+//             const dayNames = ["Lun", "Mar", "Mer", "Jeu", "Ven", "Sam", "Dim"];
+//             for (let dayName of dayNames) {
+//                 const dayElement = document.createElement("div");
+//                 dayElement.classList.add("day");
+//                 dayElement.textContent = dayName;
+//                 calendar.appendChild(dayElement);
+//             }
+
+//             for (let day = 1; day <= daysInMonth; day++) {
+//                 const dayElement = document.createElement("div");
+//                 dayElement.classList.add("day");
+//                 dayElement.textContent = day;
+
+//                 // Exemple de jours non disponibles
+//                 if (day === 25 || day === 26) {
+//                     dayElement.classList.add("unavailable");
+//                 }
+
+//                 calendar.appendChild(dayElement);
+//             }
+//         }
+
+//         function previousMonth() {
+//             if (currentMonth > 0) {
+//                 currentMonth--;
+//             } else {
+//                 currentMonth = 11;
+//                 currentYear--;
+//             }
+//             generateCalendar();
+//         }
+
+//         function nextMonth() {
+//             if (currentMonth < 11) {
+//                 currentMonth++;
+//             } else {
+//                 currentMonth = 0;
+//                 currentYear++;
+//             }
+//             generateCalendar();
+//         }
+
+//         generateCalendar();
+let cases = document.getElementsByClassName('case');
+
+let date = new Date();
+let year = date.getFullYear();
+let month = date.getMonth() + 1;
+let day = date.getDate();
+
+const monthName = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"];
+
+const UP_MONTH = 'upMonth';
+const DOWN_MONTH = 'downMonth';
+
+function CALENDRIER_REDUCER(action) {
+  switch (action) {
+    case UP_MONTH:
+      if (month < 12) month++
+      else {
+        year++
+        month = 1;
+      }
+      break;
+    case DOWN_MONTH:
+      if (month > 1) month--
+      else {
+        year--
+        month = 12;
+      }
+      break;
+    default:
+      break;
+  }
+  getCalendrier(year, month);
+}
+
+document.getElementById('left').onclick = function () {
+  CALENDRIER_REDUCER(DOWN_MONTH);
+  console.log(month);
+}
+
+document.getElementById('right').onclick = function () {
+  CALENDRIER_REDUCER(UP_MONTH);
+  console.log(month);
+};
+
+getCalendrier(year, month);
+
+function getCalendrier(year, month) {
+  const monthNb = month + 12 * (year - 2020);
+  let cld = [{ dayStart: 2, length: 31, year: 2020, month: "janvier" }];
+
+  for (let i = 0; i < monthNb - 1; i++) {
+    let yearSimule = 2020 + Math.floor(i / 12);
+    const monthsSimuleLongueur = [31, getFévrierLength(yearSimule), 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+    let monthsSimuleIndex = (i + 1) - (yearSimule - 2020) * 12;
+
+    cld[i + 1] = {
+      dayStart: (cld[i].dayStart + monthsSimuleLongueur[monthsSimuleIndex - 1]) % 7,
+      length: monthsSimuleLongueur[monthsSimuleIndex],
+      year: 2020 + Math.floor((i + 1) / 12),
+      month: monthName[monthsSimuleIndex]
+    }
+    if (cld[i + 1].month === undefined) {
+      cld[i + 1].month = "janvier"
+      cld[i + 1].length = 31;
+    }
+    // Remplissage de toutes les cases du calendrier
+    for (let i = 0; i < cases.length; i++) {
+      cases[i].innerText = "";
+      const dayOfMonth = i - cld[cld.length - 1].dayStart + 1;
+      if (dayOfMonth > 0 && dayOfMonth <= cld[cld.length - 1].length) {
+        const currentDate = `${year}-${month.toString().padStart(2, '0')}-${dayOfMonth.toString().padStart(2, '0')}`;
+        cases[i].setAttribute('data-date', currentDate);
+        cases[i].innerText = dayOfMonth.toString();
+      }
+    }
+
+    function getFévrierLength(year) {
+      if (year % 4 === 0) return 29;
+      else return 28;
+    }
+    // Mise à jour de l'affichage du calendrier
+    document.getElementById('cldT').innerText = monthName[month - 1].toLocaleUpperCase() + " " + year;
+  }
+}
+
 
 
 
@@ -299,5 +380,3 @@ form.addEventListener('submit', function (e) {
 });
 
 // ****************************translate*********
-
-
